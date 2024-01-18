@@ -6,7 +6,7 @@ function a() {
   }).then(() => {
     swal({
       title: "🏅Major Memes",
-      text: "Special thanks 🙏 to D3vd",
+      text: "Special thanks 🙏 to the Mayhem Squad",
       icon: "info",
     });
   });
