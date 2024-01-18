@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --black: #181818;
+  --gray: #2e2e2e;
+  --primary: mediumpurple;
+  --sec: plum;
+  --white: whitesmoke;
+}
+
+body {
+  overflow: none;
+  color: var(--white) !important;
+  animation: blur 0.7s ease-in-out;
+  background: var(--black) !important;
+  height: 100%;
+  font-family: "Comic Sans", Oxygen, system-ui;
+}
+h1, h3{
+    font-family: "Aspace", "Comic Sans", Oxygen, system-ui;
+}
+@keyframes blur {
+  0% {
+    filter: blur(18px);
+  }
+  100% {
+  }
+}
+@font-face {
+  font-family: "Aspace";
+  src: url("../fonts/aspace_demo.otf");
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.site-wrap {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-content {
+  flex: 1;
+  margin: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header i,
+.site-header .title{
+    font-size: 1.5em;
+    padding: .5em;
+}
+.site-header a{
+    color: var(--white);
+}
+.site-header a:hover{
+    color: var(--primary);
+    transition: all 0.5s;
+}
+
+.site-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--gray);
+  padding: .5em;
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .btn {
+  text-decoration: none;
+  color: var(--white);
+  background: var(--primary);
+  padding: 1em;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+footer .btn:hover {
+  color: var(--white);
+  background: var(--sec);
+  transition: all 0.5s;
+}
+@media screen and (max-width: 600px) {
+  .site-header .title, 
+  .site-footer{
+    font-size: 1em;
+ }
+ .site-content{
+    margin: 5em;
+ }
+ .btn span{
+    display: none;
+ }
+}
+
+.swal-modal{
+  background: var(--gray);
+}
+.swal-title{
+  color: var(--white);
+}
+.swal-text{
+  color: var(--white);
+}
+.swal-footer .swal-button{
+  background: var(--primary);
+}
+.swal-footer .swal-button:hover{
+  background: var(--sec);
+  transition: all 0.5s;
+}

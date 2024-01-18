@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Get the best memes from reddit from one place"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.min.css' %}" />
+    <script defer src="{% static 'js/main.js' %}"></script>
+    <script defer src="{% static 'js/sweetalert.min.js' %}"></script>
+    <title>Major Jokes</title>
+  </head>
+  <body>
+    <div class="site-wrap">
+      <header class="site-header">
+        <h1 class="title">🏅 Major Jokes</h1>
+        <p>
+          <a href="#" onclick="a()"><i class="bi bi-info-circle"></i></a>
+        </p>
+      </header>
+      <main class="site-content">
+        <p id="joke-container">{{joke}}</p>
+      </main>
+      <footer class="site-footer">
+        <button id="next-btn" class="btn">
+          <i class="bi bi-caret-right"></i> <span>Next Joke</span>
+        </button>
+      </footer>
+    </div>
+    <section class="modal-box"></section>
+    <script>
+      const jokeButton = document.querySelector("#next-btn");
+      const jokeContainer = document.querySelector("#joke-container");
+
+      jokeButton.addEventListener("click", () => {
+        fetch("/get-joke")
+          .then((response) => response.json())
+          .then((data) => {
+            jokeContainer.innerHTML = data.joke;
+          });
+      });
+    </script>
+  </body>
+</html>
