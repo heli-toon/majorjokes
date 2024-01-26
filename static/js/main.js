@@ -6,7 +6,7 @@ function a() {
   }).then(() => {
     swal({
       title: "🏅Major Jokes",
-      text: "Special thanks 🙏 to the Orignal member of the Mayhem Squad / ",
+      text: "Special thanks 🙏 to the Orignal members of the Mayhem Squad",
       icon: "info",
     });
   });
